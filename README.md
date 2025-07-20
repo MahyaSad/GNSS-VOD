@@ -31,7 +31,7 @@ The methodology follows a 7-step process:
 6. **Angular Heterogeneity Correction**: Remove spatial sampling artifacts
 7. **Temporal Aggregation**: Create hourly VOD time series
 
-![Spatial Heterogeneity](spatial_heterogeneity.png)
+![Spatial Heterogeneity](localmean.pdf)
 *Figure 3: Spatial heterogeneity in canopy transmissivity (a) and VOD (b) showing why angular correction is essential for time series analysis*
 
 ### Key Innovation: Heterogeneity Correction
