@@ -155,7 +155,7 @@ Matches observations between forest and open-sky environments from the processed
 4. Selects closest temporal match when multiple candidates exist
 5. Outputs paired observations with complete timestamp details
 
-### 4. Enhanced VOD Analyzer (`enhanced_vod_analyzer.py`)
+### 4. Enhanced VOD Analyzer (`hourly_vod.py`)
 
 Calculates Vegetation Optical Depth (VOD) from matched forest/open-sky observations using the methodology from Humphrey & Frankenberg (2023).
 
