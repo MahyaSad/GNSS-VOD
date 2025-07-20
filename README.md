@@ -31,6 +31,22 @@ The methodology follows a 7-step process:
 6. **Angular Heterogeneity Correction**: Remove spatial sampling artifacts
 7. **Temporal Aggregation**: Create hourly VOD time series
 
+![Spatial Heterogeneity](spatial_heterogeneity.png)
+*Figure 3: Spatial heterogeneity in canopy transmissivity (a) and VOD (b) showing why angular correction is essential for time series analysis*
+
+### Key Innovation: Heterogeneity Correction
+The spatial heterogeneity correction (Step 6) is critical because:
+- **GNSS orbits change continuously**, sampling different parts of the canopy each day
+- **Canopy structure is heterogeneous** (dense vs. sparse areas)
+- **Without correction**: Apparent temporal changes would be caused by sampling different canopy areas
+- **With correction**: True temporal changes in vegetation water content are revealed
+
+The correction process:
+1. **Calculate local spatial means** for each viewing direction
+2. **Remove spatial pattern**: VOD_residual = VOD_raw - VOD_local_mean  
+3. **Add global mean**: VOD_corrected = VOD_residual + VOD_global_mean
+4. **Result**: Time series reflects actual vegetation changes, not sampling artifacts
+
 ### Key Capabilities
 - **Hourly to sub-hourly VOD monitoring** using L-band GNSS signals (1-2 GHz)
 - **Diurnal cycle detection** of vegetation water content changes
