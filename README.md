@@ -9,7 +9,7 @@ These scripts implement the methodology from **Humphrey & Frankenberg (2023), Bi
 ### GNSS-Based VOD Method
 The approach uses **dual GNSS receiver setup**:
 
-![GNSS Setup Diagram](GNSS.png)
+![GNSS Setup Diagram](GNSS_Intro.png)
 *Figure 1: GNSS-based vegetation monitoring setup showing dual receiver configuration for measuring canopy transmissivity*
 
 - **Reference receiver**: Open-sky location (roof-mounted)
@@ -19,7 +19,7 @@ The approach uses **dual GNSS receiver setup**:
 
 ### Processing Methodology
 
-![Processing Flowchart](path/to/figure2.png)
+![Processing Flowchart](flowchart.png)
 *Figure 2: Complete processing workflow from raw GNSS data to hourly VOD estimates*
 
 The methodology follows a 7-step process:
