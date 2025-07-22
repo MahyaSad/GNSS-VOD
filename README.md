@@ -1,6 +1,6 @@
 # GNSS Satellite Data Processing
 
-Python scripts for processing GNSS satellite data to find matched observations between forest and open-sky environments. These scripts process TEQC compact format files and perform exact time-matching of elevation, azimuth, and SNR measurements from both environments for comparative analysis.
+Python scripts for processing GNSS satellite data to find matched observations between forest and open-sky observations. These scripts process TEQC compact format files and perform exact time-matching of elevation, azimuth, and SNR measurements from both recievers for comparative analysis.
 
 ## Scientific Background & Data Source
 
@@ -53,14 +53,6 @@ The correction process:
 - **Multi-constellation support** (GPS, GLONASS, Galileo, BeiDou)
 - **Canopy water content retrieval** using transmissivity models
 - **Rainfall/dew interception monitoring**
-
-### Scientific Validation
-The methodology has been validated through:
-- **Comparison with satellite VOD** from SMOS and SMAP missions
-- **In-situ leaf water content measurements** 
-- **Correlation with optical vegetation indices** (EVI, NDWI from Sentinel-2)
-- **8-month continuous measurements** in southern California forest
-- **Diurnal amplitude of ~28%** in canopy water content detected
 
 ## Data Source
 
@@ -176,9 +168,8 @@ Calculates Vegetation Optical Depth (VOD) from matched forest/open-sky observati
 
 **Filtering Applied (based on Humphrey & Frankenberg 2023)**:
 - Elevation ≥ 10° (configurable)
-- NE artifacts: 0°-70° azimuth, ≤30° elevation (removed)
-- NW artifacts: 280°-340° azimuth, ≤40° elevation (removed)
-- Transmissivity thresholds: 0.0001 - 40 (configurable)
+- NE artifacts: 0°-70° azimuth, ≤30° elevation (building)
+- NW artifacts: 280°-340° azimuth, ≤40° elevation (building)
 
 ## Requirements
 
@@ -247,9 +238,7 @@ from enhanced_vod_analyzer import EnhancedVODAnalyzer
 # Create analyzer with parameters
 analyzer = EnhancedVODAnalyzer(
     min_elevation=10.0,
-    neighbor_radius=0.5,
-    min_transmissivity=0.0001,
-    max_transmissivity=40
+    neighbor_radius=0.5
 )
 
 # Run complete VOD analysis (loads matched CSV automatically)
